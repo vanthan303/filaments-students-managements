@@ -17,6 +17,7 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use App\Filament\Pages\Auth\Login;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -26,7 +27,8 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin')
             ->path('admin')
-            ->login()
+            //->login() // login mặc định của filament bằng email, pass
+            ->login(Login::class)
             ->colors([
                 'primary' => Color::Amber,
             ])
@@ -41,8 +43,8 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
 
                 // Hiển thị thông tin mặc định ở trang Dashboard
-                //Widgets\AccountWidget::class, // hiện thông tin tài khoản
-                //Widgets\FilamentInfoWidget::class, // hiện thông tin về phiên bản filament
+                Widgets\AccountWidget::class, // hiện thông tin tài khoản
+                Widgets\FilamentInfoWidget::class, // hiện thông tin về phiên bản filament
             ])
             ->middleware([
                 EncryptCookies::class,

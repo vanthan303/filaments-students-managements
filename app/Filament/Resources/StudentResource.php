@@ -171,6 +171,12 @@ class StudentResource extends Resource
                     return route('student.invoice.generate', $student);
                 }),
 
+                // Tạo QRCode
+                Action::make('qrCode')
+                    ->url(function (Student $record) {
+                        return static::getUrl('qrCode', ['record' => $record]);
+                    }),
+
                 // Tạo ra các button ở danh sách List
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
@@ -201,6 +207,8 @@ class StudentResource extends Resource
             'index' => Pages\ListStudents::route('/'),
             'create' => Pages\CreateStudent::route('/create'),
             'edit' => Pages\EditStudent::route('/{record}/edit'),
+
+            'qrCode' => Pages\GenerateQrCode::route('/{record}/qrcode'),
         ];
     }
 }
