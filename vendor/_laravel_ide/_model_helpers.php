@@ -826,12 +826,12 @@ namespace App\Models {
     /**
      * App\Models\User
      *
+     * @property mixed $username
      * @property \Illuminate\Support\Carbon|null $updated_at
      * @property \Illuminate\Support\Carbon|null $created_at
      * @property mixed $remember_token
      * @property mixed $password
      * @property \Illuminate\Support\Carbon|null $email_verified_at
-     * @property mixed $username
      * @property mixed $email
      * @property mixed $name
      * @property int $id
@@ -842,12 +842,12 @@ namespace App\Models {
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereId($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereName($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmail($value)
-     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereUsername($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereEmailVerifiedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User wherePassword($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereRememberToken($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereCreatedAt($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereUpdatedAt($value)
+     * @method static \Illuminate\Database\Eloquent\Builder<User>|User whereUsername($value)
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User newModelQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User newQuery()
      * @method static \Illuminate\Database\Eloquent\Builder<User>|User query()
