@@ -28,7 +28,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             //->login() // login mặc định của filament bằng email, pass
-            ->login(Login::class)
+            ->login(Login::class) // login sau khi thay đổi, login bằng username, pass
             ->colors([
                 'primary' => Color::Amber,
             ])
