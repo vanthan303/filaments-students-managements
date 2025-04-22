@@ -57,7 +57,8 @@ class CreateQrCode extends CreateRecord
                 Storage::disk('public')->put($filename, $response->body());
 
                 // Lấy đường dẫn công khai (URL) của file ảnh đã lưu
-                $data['local_link'] = Storage::disk('public')->url($filename);
+                $data['local_link'] = $filename;
+                //dd($data);
 
             } else {
                 // Xử lý trường hợp API trả về lỗi hoặc không có dữ liệu ảnh
@@ -72,6 +73,7 @@ class CreateQrCode extends CreateRecord
 
                 // Ngừng quá trình lưu bản ghi nếu không tạo được ảnh
                 $this->halt(); // Filament helper to stop the save process
+
                 return $data; // Trả về data nhưng quá trình lưu đã bị dừng
             }
 
